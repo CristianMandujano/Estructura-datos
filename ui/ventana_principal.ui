@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuEstructura_Datos">
+    <property name="title">
+     <string>Estructura Datos </string>
+    </property>
+    <widget class="QMenu" name="menuEstructuras">
+     <property name="title">
+      <string>Estructuras </string>
+     </property>
+     <addaction name="actionLineales"/>
+     <addaction name="actionNo_lIneales"/>
+    </widget>
+    <addaction name="menuEstructuras"/>
+    <addaction name="separator"/>
+    <addaction name="actionSalir"/>
+   </widget>
+   <addaction name="menuEstructura_Datos"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionLineales">
+   <property name="text">
+    <string>Lineales </string>
+   </property>
+  </action>
+  <action name="actionNo_lIneales">
+   <property name="text">
+    <string>No lIneales</string>
+   </property>
+  </action>
+  <action name="actionSalir">
+   <property name="text">
+    <string>Salir</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
