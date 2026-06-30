@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMenus">
+    <property name="title">
+     <string>Menus</string>
+    </property>
+    <addaction name="actionlista_enlazada"/>
+    <addaction name="actionpila"/>
+    <addaction name="actionconvertidor"/>
+    <addaction name="separator"/>
+    <addaction name="actionsalir_2"/>
+   </widget>
+   <addaction name="menuMenus"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionpila">
+   <property name="text">
+    <string>Pila</string>
+   </property>
+  </action>
+  <action name="actionsalir_2">
+   <property name="text">
+    <string>Salir</string>
+   </property>
+  </action>
+  <action name="actioninsertar_al_incio">
+   <property name="text">
+    <string>insertar al incio</string>
+   </property>
+  </action>
+  <action name="actioninsertar_al_final">
+   <property name="text">
+    <string>insertar al final </string>
+   </property>
+  </action>
+  <action name="actionbuscar">
+   <property name="text">
+    <string>buscar</string>
+   </property>
+  </action>
+  <action name="actionimprimir">
+   <property name="text">
+    <string>imprimir</string>
+   </property>
+  </action>
+  <action name="actionsalir">
+   <property name="text">
+    <string>salir </string>
+   </property>
+  </action>
+  <action name="actionSalir_2">
+   <property name="text">
+    <string>Salir</string>
+   </property>
+  </action>
+  <action name="actionlista_enlazada">
+   <property name="text">
+    <string>Lista Enlazada</string>
+   </property>
+  </action>
+  <action name="actionconvertidor">
+   <property name="text">
+    <string>Convertidor</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
