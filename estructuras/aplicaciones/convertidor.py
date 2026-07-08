@@ -65,3 +65,45 @@ class ConvertidorInfixPostFix:
                 cadena_posfija.append(nodo_extraido.data)
 
         return "".join(cadena_posfija)
+    
+    def evaluar_posfija(self, expresion_posfija):
+        # Asegurar que la pila esté limpia antes de iniciar
+        while not self.pila.is_empty():
+            self.pila.pop()
+
+        for elemento in expresion_posfija:
+            # 1. Si es un dígito, se convierte a entero y se apila
+            if elemento.isdigit():
+                self.pila.push(int(elemento))
+            
+            # 2. Si es un operador, se desapilan los dos operandos
+            elif self.es_operador(elemento):
+                nodo_b = self.pila.pop()
+                nodo_a = self.pila.pop()
+                
+                if nodo_b is None or nodo_a is None:
+                    print("Error: Expresión posfija mal formada.")
+                    return None
+                
+                # Extraemos los datos numéricos de los nodos
+                b = nodo_b.data
+                a = nodo_a.data
+                resultado = 0
+                
+                # Realizamos la operación matemática correspondiente
+                if elemento == '+': resultado = a + b
+                elif elemento == '-': resultado = a - b
+                elif elemento == '*': resultado = a * b
+                elif elemento == '/': 
+                    if b == 0:
+                        print("Error: División por cero.")
+                        return None
+                    resultado = a // b  # División entera para mantener consistencia
+                elif elemento == '$': resultado = a ** b
+                
+                # El resultado se vuelve a meter a la pila
+                self.pila.push(resultado)
+
+        # 3. El resultado final se encuentra en el tope de la pila
+        nodo_final = self.pila.pop()
+        return nodo_final.data if nodo_final is not None else None
