@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>495</width>
+    <height>340</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* Estilo general de la ventana de diálogo */
+QDialog {
+    background-color: #F8F9FA; /* Gris casi blanco, muy limpio */
+    font-family: &quot;Segoe UI&quot;, &quot;Arial&quot;, sans-serif;
+}
+
+/* Caja de texto (input) */
+QLineEdit {
+    background-color: #FFFFFF;
+    border: 2px solid #E9ECEF;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #495057;
+}
+
+/* Cuando el usuario hace clic en la caja de texto */
+QLineEdit:focus {
+    border: 2px solid #4D96FF; /* Azul suave de enfoque */
+}
+
+/* Estilo para todos los botones */
+QPushButton {
+    background-color: #FFFFFF; /* Fondo blanco */
+    color: #4D96FF;            /* Texto azul pastel */
+    border: 2px solid #4D96FF; /* Borde azul */
+    border-radius: 8px;        /* Bordes redondeados modernos */
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: bold;
+    min-width: 100px;
+}
+
+/* Efecto cuando pasas el mouse por encima del botón (Hover) */
+QPushButton:hover {
+    background-color: #4D96FF; /* Se invierten los colores */
+    color: #FFFFFF;
+}
+
+/* Efecto cuando presionas el botón */
+QPushButton:pressed {
+    background-color: #377DFF;
+    border-color: #377DFF;
+}
+
+/* El botón principal de Enqueue (para darle prioridad visual) */
+QPushButton#btn_enqueue {
+    background-color: #4D96FF;
+    color: #FFFFFF;
+}
+
+QPushButton#btn_enqueue:hover {
+    background-color: #377DFF;
+    border-color: #377DFF;
+}
+
+/* Etiquetas de texto (Label) */
+QLabel {
+    color: #343A40; /* Gris oscuro para que contraste bien sin ser negro puro */
+    font-size: 14px;
+}
+
+/* Estilo específico para el texto del resultado (=) */
+QLabel#lbl_resultado {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2B3A42;
+    padding: 8px;
+    background-color: #E9ECEF; /* Bloque gris claro para resaltar el resultado */
+    border-radius: 6px;
+}</string>
+  </property>
+  <widget class="QPushButton" name="btn_printqueue">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>180</y>
+     <width>136</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PRINTQUEUE</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_enqueue">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>120</y>
+     <width>136</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>ENQUEUE</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_firsqueue">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>120</y>
+     <width>136</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>FIRSQUEUE</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_lastqueue">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>120</y>
+     <width>136</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>LASTQUEUE</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_resultado">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>230</y>
+     <width>441</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>=</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_dequeue">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>180</y>
+     <width>136</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>DEQUEUE</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txt_dato">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>20</y>
+     <width>331</width>
+     <height>81</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

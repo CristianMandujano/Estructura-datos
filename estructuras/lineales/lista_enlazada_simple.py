@@ -49,3 +49,41 @@ class Linkedlist(object):
                     temp = temp.next
             #Paso 6: Si se recorre toda la lista y no se encuentra el dato, retornar False
             return False
+
+    def delete_at_beginning(self):
+          if self.head is None:
+            print("La lista está vacía. No se puede eliminar ningún nodo.")
+            return
+          else:
+            temp = self.head
+            self.head = self.head.next
+            
+          if self.head is None:
+                self.tail = None
+                
+          del temp
+
+    def delete_at_end(self):
+        if self.head is None:
+            print("La lista está vacía. No se puede eliminar ningún nodo.")
+            return
+        elif self.head == self.tail:
+            # Si la lista tiene solo un nodo, eliminarlo y actualizar la cabeza y la cola a None
+            temp = self.head
+            self.head = None
+            self.tail = None
+            del temp
+        else:
+            # Paso 1: Recorrer la lista hasta llegar al penúltimo nodo
+            temp = self.head
+            while temp.next != self.tail:
+                temp = temp.next
+            # Paso 2: Guardar el nodo actual de la cola en una variable temporal
+            last_node = self.tail
+            # Paso 3: Actualizar la cola de la lista para que apunte al penúltimo nodo
+            self.tail = temp
+            # Paso 4: Establecer el siguiente del nuevo último nodo a None
+            self.tail.next = None
+            # Paso 5: Eliminar el nodo temporal para liberar memoria
+            del last_node
+            
