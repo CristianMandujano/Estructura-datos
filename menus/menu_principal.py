@@ -3,6 +3,7 @@ from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow, QApplication 
 
 from load.load_dialogo_banco import DialogoBanco
+from load.load_dialogo_impresion import DialogoImpresion
 from load.load_dialogo_pila import DialogoPila
 from load.load_dialogo_convertidor import DialogoConvertidor  
 from estructuras.lineales.stack import Stack
@@ -20,6 +21,7 @@ class MenuPrincipal(QMainWindow):
         self.actionconvertidor.triggered.connect(self.abrir_modulo_convertidor)
         self.actioncola.triggered.connect(self.abrir_modulo_cola)
         self.actionbanco.triggered.connect(self.abrir_modulo_banco)
+        self.actionimpresion.triggered.connect(self.abrir_cola_impresion)
 
     def abrir_modulo_pila(self):
         print("Abriendo Pila...")
@@ -27,7 +29,6 @@ class MenuPrincipal(QMainWindow):
         self.ventana_pila.exec_()
         
     def abrir_modulo_lista(self):
-        # El que quedó pendiente de la clase que faltaste, lo dejamos pasar por ahora
         pass 
 
     def abrir_modulo_convertidor(self):
@@ -44,4 +45,9 @@ class MenuPrincipal(QMainWindow):
         print("Abriendo Banco...")
         ventana_banco = DialogoBanco()
         ventana_banco.exec_()
+
+    def abrir_cola_impresion(self):
+        print("Abriendo Cola de Impresión...")
+        dialogo = DialogoImpresion()
+        dialogo.exec_()
     

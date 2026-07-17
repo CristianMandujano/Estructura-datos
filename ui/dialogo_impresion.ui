@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DialogoImpresion</class>
+ <widget class="QDialog" name="DialogoImpresion">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>550</width>
+    <height>420</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Simulación de Cola de Impresión</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* Ventana principal del diálogo */
+QDialog {
+    background-color: #F8FAFC;
+    font-family: &quot;Segoe UI&quot;, &quot;Arial&quot;, sans-serif;
+}
+
+/* Campos de texto (QLineEdit) */
+QLineEdit {
+    background-color: #FFFFFF;
+    border: 2px solid #CBD5E1;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 13px;
+    color: #1E293B;
+}
+
+QLineEdit:focus {
+    border: 2px solid #2563EB; /* Borde azul al enfocar */
+}
+
+/* Tabla de trabajos pendientes (QTableWidget) */
+QTableWidget {
+    background-color: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    gridline-color: #E2E8F0;
+    color: #1E293B;
+    font-size: 13px;
+}
+
+QHeaderView::section {
+    background-color: #EDF2F7;
+    color: #334155;
+    font-weight: bold;
+    padding: 6px;
+    border: none;
+    border-bottom: 2px solid #CBD5E1;
+}
+
+/* Botón 'Agregar a la cola' (Acción principal) */
+QPushButton#btn_agregar {
+    background-color: #2563EB; /* Azul moderno */
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+QPushButton#btn_agregar:hover {
+    background-color: #1D4ED8;
+}
+
+QPushButton#btn_agregar:pressed {
+    background-color: #1E40AF;
+}
+
+/* Botón 'Imprimir siguiente' (Acción de procesamiento) */
+QPushButton#btn_imprimir {
+    background-color: #16A34A; /* Verde impresión */
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+QPushButton#btn_imprimir:hover {
+    background-color: #15803D;
+}
+
+QPushButton#btn_imprimir:pressed {
+    background-color: #166534;
+}
+
+/* Botón 'Consultar frente' */
+QPushButton#btn_frente {
+    background-color: #E2E8F0;
+    color: #334155;
+    border: 1px solid #CBD5E1;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+QPushButton#btn_frente:hover {
+    background-color: #CBD5E1;
+}
+
+/* Botones genéricos de respaldo */
+QPushButton {
+    background-color: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 13px;
+    color: #334155;
+}
+
+/* Etiquetas generales */
+QLabel {
+    color: #334155;
+    font-size: 13px;
+}
+
+/* Etiqueta del total de trabajos pendientes */
+QLabel#lbl_total_pendientes {
+    font-weight: bold;
+    color: #0F172A;
+    font-size: 13px;
+}
+
+/* Área de mensajes y estado */
+QLabel#lbl_mensajes {
+    background-color: #F1F5F9;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 8px;
+    color: #1E293B;
+    font-size: 12px;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QFormLayout" name="formLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="lblUser">
+       <property name="text">
+        <string>Usuario:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="txt_usuario"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="lblDoc">
+       <property name="text">
+        <string>Documento:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="txt_documento"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="lblPag">
+       <property name="text">
+        <string>Páginas:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="txt_paginas"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="layoutBotones">
+     <item>
+      <widget class="QPushButton" name="btn_agregar">
+       <property name="text">
+        <string>Agregar a la Cola</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_imprimir">
+       <property name="text">
+        <string>Imprimir Siguiente</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_frente">
+       <property name="text">
+        <string>Consultar Frente</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QTableWidget" name="tabla_pendientes">
+     <column>
+      <property name="text">
+       <string># Consecutivo</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Usuario</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Documento</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Páginas</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="lbl_total_pendientes">
+     <property name="text">
+      <string>Total de trabajos pendientes: 0</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="lbl_mensajes">
+     <property name="text">
+      <string>Área de mensajes y estado del sistema.</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
