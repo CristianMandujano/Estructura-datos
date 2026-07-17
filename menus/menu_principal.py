@@ -2,6 +2,7 @@ import sys
 from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow, QApplication 
 
+from load.load_dialogo_banco import DialogoBanco
 from load.load_dialogo_pila import DialogoPila
 from load.load_dialogo_convertidor import DialogoConvertidor  
 from estructuras.lineales.stack import Stack
@@ -18,6 +19,7 @@ class MenuPrincipal(QMainWindow):
         self.actionsalir.triggered.connect(self.close)
         self.actionconvertidor.triggered.connect(self.abrir_modulo_convertidor)
         self.actioncola.triggered.connect(self.abrir_modulo_cola)
+        self.actionbanco.triggered.connect(self.abrir_modulo_banco)
 
     def abrir_modulo_pila(self):
         print("Abriendo Pila...")
@@ -37,3 +39,9 @@ class MenuPrincipal(QMainWindow):
        print("Abriendo Cola...")
        ventana_cola = DialogoQueue()
        ventana_cola.exec_()
+
+    def abrir_modulo_banco(self):
+        print("Abriendo Banco...")
+        ventana_banco = DialogoBanco()
+        ventana_banco.exec_()
+    

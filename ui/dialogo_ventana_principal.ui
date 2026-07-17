@@ -31,6 +31,7 @@
     <addaction name="actionpila"/>
     <addaction name="actionconvertidor"/>
     <addaction name="actioncola"/>
+    <addaction name="actionbanco"/>
     <addaction name="separator"/>
     <addaction name="actionsalir_2"/>
    </widget>
@@ -90,6 +91,11 @@
   <action name="actioncola">
    <property name="text">
     <string>Cola</string>
+   </property>
+  </action>
+  <action name="actionbanco">
+   <property name="text">
+    <string>Banco</string>
    </property>
   </action>
  </widget>

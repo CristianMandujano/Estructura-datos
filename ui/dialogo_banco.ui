@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>567</width>
+    <height>367</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* Ventana principal del diálogo */
+QDialog {
+    background-color: #F4F6F9; /* Gris muy claro, limpio y profesional */
+    font-family: &quot;Segoe UI&quot;, &quot;Arial&quot;, sans-serif;
+}
+
+/* Caja para ingresar el cliente (QLineEdit) */
+QLineEdit {
+    background-color: #FFFFFF;
+    border: 2px solid #CED4DA;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 14px;
+    color: #212529;
+}
+
+QLineEdit:focus {
+    border: 2px solid #2B6CB0; /* Borde azul al hacer clic */
+}
+
+/* Lista de espera (QListWidget o QTextEdit) */
+QListWidget, QTextEdit {
+    background-color: #FFFFFF;
+    border: 2px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 8px;
+    font-size: 13px;
+    color: #2D3748;
+}
+
+/* Botón 'Turno' (Acción principal de entrada) */
+QPushButton#btn_turno {
+    background-color: #3182CE; /* Azul bancario */
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+QPushButton#btn_turno:hover {
+    background-color: #2B6CB0;
+}
+
+QPushButton#btn_turno:pressed {
+    background-color: #2C5282;
+}
+
+/* Botón 'Atender' (Acción de servicio) */
+QPushButton#btn_atender {
+    background-color: #38A169; /* Verde sobrio */
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+QPushButton#btn_atender:hover {
+    background-color: #2F855A;
+}
+
+QPushButton#btn_atender:pressed {
+    background-color: #276749;
+}
+
+/* Botón 'Cerrar' (Acción de cierre/alerta) */
+QPushButton#btn_cerrar {
+    background-color: #E2E8F0;
+    color: #4A5568;
+    border: 1px solid #CBD5E0;
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+QPushButton#btn_cerrar:hover {
+    background-color: #E53E3E; /* Se vuelve rojo suave al pasar el mouse */
+    color: #FFFFFF;
+    border: none;
+}
+
+/* Botones genéricos por si no usas los objectName arriba */
+QPushButton {
+    background-color: #FFFFFF;
+    border: 2px solid #CBD5E0;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 13px;
+    color: #2D3748;
+    font-weight: 500;
+}
+
+QPushButton:hover {
+    background-color: #EDF2F7;
+}
+
+/* Etiquetas de texto general */
+QLabel {
+    color: #2D3748;
+    font-size: 13px;
+}
+
+/* Etiquetas de métricas (Clientes atendidos / Tiempo promedio) */
+QLabel#lbl_atendidos, QLabel#lbl_promedio {
+    font-size: 13px;
+    font-weight: bold;
+    color: #1A202C;
+}</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>55</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Cliente:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txt_cliente">
+   <property name="geometry">
+    <rect>
+     <x>62</x>
+     <y>10</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_turno">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>10</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Turno</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_atender">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>120</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Atender</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_ultimo_atendido">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>50</y>
+     <width>191</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>...</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_cerrar">
+   <property name="geometry">
+    <rect>
+     <x>112</x>
+     <y>320</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Cerrar</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_estado_banco">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>230</y>
+     <width>301</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>...</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="list_clientes">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>50</y>
+     <width>191</width>
+     <height>161</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_atendidos">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>230</y>
+     <width>231</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Clientes atendidos:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_promedio">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>280</y>
+     <width>231</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Tiempo promedio:</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
