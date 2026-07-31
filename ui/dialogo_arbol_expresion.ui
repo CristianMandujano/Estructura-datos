@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DialogoArbolExpresion</class>
+ <widget class="QDialog" name="DialogoArbolExpresion">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>850</width>
+    <height>680</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Árbol Binario de Expresión Aritmética</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+    QDialog {
+        background-color: #F8FAFC;
+    }
+    QLabel {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        color: #1E293B;
+        font-size: 13px;
+    }
+    QLabel#lbl_titulo {
+        font-size: 18px;
+        font-weight: bold;
+        color: #0F172A;
+    }
+    QLineEdit {
+        background-color: #FFFFFF;
+        border: 2px solid #CBD5E1;
+        border-radius: 8px;
+        padding: 8px 12px;
+        font-size: 14px;
+        color: #0F172A;
+    }
+    QLineEdit:focus {
+        border-color: #3B82F6;
+    }
+    QPushButton {
+        background-color: #2563EB;
+        color: #FFFFFF;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 18px;
+        font-size: 13px;
+        font-weight: bold;
+    }
+    QPushButton:hover {
+        background-color: #1D4ED8;
+    }
+    QPushButton:pressed {
+        background-color: #1E40AF;
+    }
+    QFrame#card_recorridos {
+        background-color: #FFFFFF;
+        border: 1px solid #E2E8F0;
+        border-radius: 10px;
+        padding: 12px;
+    }
+    QGraphicsView {
+        background-color: #FFFFFF;
+        border: 1px solid #CBD5E1;
+        border-radius: 10px;
+    }
+   </string>
+  </property>
+  <layout class="QVBoxLayout" name="layoutPrincipal">
+   <property name="spacing">
+    <number>15</number>
+   </property>
+   <property name="leftMargin">
+    <number>20</number>
+   </property>
+   <property name="topMargin">
+    <number>20</number>
+   </property>
+   <property name="rightMargin">
+    <number>20</number>
+   </property>
+   <property name="bottomMargin">
+    <number>20</number>
+   </property>
+
+   <!-- TÍTULO DE LA VENTANA -->
+   <item>
+    <widget class="QLabel" name="lbl_titulo">
+     <property name="text">
+      <string>🌳 Construcción de Árbol de Expresión</string>
+     </property>
+    </widget>
+   </item>
+
+   <!-- SECCIÓN DE ENTRADA (QLineEdit + QPushButton) -->
+   <item>
+    <layout class="QHBoxLayout" name="layoutEntrada">
+     <property name="spacing">
+      <number>10</number>
+     </property>
+     <item>
+      <widget class="QLineEdit" name="input_expresion">
+       <property name="placeholderText">
+        <string>Ingresa la expresión postfija (ej. 8 2 / 3 4 + *)</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_construir">
+       <property name="text">
+        <string>Construir Árbol</string>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+
+   <!-- TARJETA DE RESULTADOS DE RECORRIDOS -->
+   <item>
+    <widget class="QFrame" name="card_recorridos">
+     <layout class="QVBoxLayout" name="layoutRecorridos">
+      <property name="spacing">
+       <number>6</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="lbl_inorden">
+        <property name="text">
+         <string>Inorden (Infija): —</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lbl_preorden">
+        <property name="text">
+         <string>Preorden (Prefija): —</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lbl_postorden">
+        <property name="text">
+         <string>Posorden (Postfija): —</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+
+   <!-- ÁREA GRÁFICA PARA DIBUJAR EL ÁRBOL -->
+   <item>
+    <widget class="QGraphicsView" name="vista_grafica"/>
+   </item>
+
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

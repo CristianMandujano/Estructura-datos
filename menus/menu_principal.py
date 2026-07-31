@@ -8,6 +8,7 @@ from load.load_dialogo_pila import DialogoPila
 from load.load_dialogo_convertidor import DialogoConvertidor  
 from estructuras.lineales.stack import Stack
 from load.load_dialogo_queue import DialogoQueue
+from load.load_dialogo_arbol_expresion import LoadDialogoArbolExpresion
 
 class MenuPrincipal(QMainWindow):
     def __init__(self):
@@ -22,6 +23,7 @@ class MenuPrincipal(QMainWindow):
         self.actioncola.triggered.connect(self.abrir_modulo_cola)
         self.actionbanco.triggered.connect(self.abrir_modulo_banco)
         self.actionimpresion.triggered.connect(self.abrir_cola_impresion)
+        self.actionarbol.triggered.connect(self.abrir_modulo_arbol)
 
     def abrir_modulo_pila(self):
         print("Abriendo Pila...")
@@ -49,5 +51,10 @@ class MenuPrincipal(QMainWindow):
     def abrir_cola_impresion(self):
         print("Abriendo Cola de Impresión...")
         dialogo = DialogoImpresion()
+        dialogo.exec_()
+
+    def abrir_modulo_arbol(self):
+        print("Abriendo árbol de expresión...")
+        dialogo = LoadDialogoArbolExpresion()
         dialogo.exec_()
     
