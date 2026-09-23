@@ -1,4 +1,4 @@
-# structures/graph.py
+# estructuras/no_lineales/grafos.py
 
 class Graph:
     """Implementación de un grafo no dirigido."""
